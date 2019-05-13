@@ -8,4 +8,11 @@ I create these samples.
 * Consumer
 * Producer / Consumer with Avro schema
 
+# How to generate Avro schema
+
+It should work with `mvn avro:schema` However, it ignores the configuration of the pom.
+
+```
+mvn avro:schema --debug -DoutputDirectory=/Users/ushio/Codes/Kafka/spike/src/main/java
+```
 
