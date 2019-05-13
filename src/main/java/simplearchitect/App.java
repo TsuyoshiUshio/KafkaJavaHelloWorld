@@ -35,10 +35,13 @@ public class App
 //        System.out.println("Done");
         LOG.info("hello log *****************");
         MessageProducer producer = new MessageProducer();
+        MessageConsumer consumer = new MessageConsumer();
         try {
 
-            Future<Void> future = producer.sendMessage("World");
-            future.get();
+            Future<Void> sendFuture = producer.sendMessage("World");
+            sendFuture.get();
+            Future<Void> receiveFuture = consumer.consumeMessage();
+            receiveFuture.get();
         } catch (UnknownHostException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
